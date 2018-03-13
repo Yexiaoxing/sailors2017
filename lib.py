@@ -34,14 +34,9 @@ class Tweet(object):
     def idx(self, token):
         return self.tokenList.index(token)
 
-    def __unicode__(self):
+    def __str__(self):
         return " ".join(self.tokenList)
 
-    def __str__(self):
-        return str(self).encode('utf-8')
-
-    def __repr__(self):
-        return self.__str__()
 
 
 def read_csv(path):
@@ -60,8 +55,8 @@ def read_csv(path):
     return data
 
 
-def read_data(train_path='data/labeled-data-singlelabels-train.csv',
-              test_path='data/labeled-data-singlelabels-test.csv'):
+def read_data(train_path='./data/labeled-data-singlelabels-train.csv',
+              test_path='./data/labeled-data-singlelabels-test.csv'):
     """Returns two lists of tweets: the train set and the test set"""
     train_tweets = read_csv(train_path)
     test_tweets = read_csv(test_path)
