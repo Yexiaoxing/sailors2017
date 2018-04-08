@@ -144,7 +144,7 @@ def most_discriminative(tweets, token_probs, prior_probs):
         probs = sorted(probs, key=lambda x: x[1], reverse=True)
         print("{0:20} {1:10}".format("TOKEN", "P(%s|token)" % c))
         for (token, p) in probs[:10]:
-            print("{0:20} {1:.4f}".format(token.encode('utf8'), p))
+            print("{0:20} {1:.4f}".format(token, p))
         print("")
 
 
